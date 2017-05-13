@@ -1,0 +1,45 @@
+// Quicksort for Ascending Order
+#include <iostream>
+#include <string>
+
+    void qsort(int *A, int low, int high){
+        int l,h,pivot,temp;
+        l = low;
+        h = high;
+        pivot = A[(l+h)/2];
+        
+        do{
+            while(A[l] < pivot){
+                l++;
+            } 
+            while(A[h] > pivot){
+                h--;
+            }
+            
+            if(l <= h){
+                temp = A[l];
+                A[l] = A[h];
+                A[h] = temp;
+                l++;
+                h--;
+            }
+            
+        }while(l <= h);
+        
+        if(l < high){
+            qsort(A,l,high);
+        }
+        if(low < h){
+            qsort(A,low,h);
+        }
+        
+    }   
+
+    int main()
+    {
+        int array[] = {7,2,12,5,3,8,6};
+        qsort(array,0,6);
+        for(int i = 0; i < 7; ++i){
+            std::cout<<array[i]<<" ";
+        }
+    }      
