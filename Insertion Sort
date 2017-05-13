@@ -1,0 +1,45 @@
+// insertion sort in descending order
+//arrange the marks of student in descending order:
+#include <iostream>
+#include <string>
+    
+    class Student{
+        public:
+            int marks;
+            std::string name;
+    };
+
+    void iSort(Student* arr, int len){
+        int temp, i ,j;
+        
+        for(i = 1; i < len; ++i){
+            temp = arr[i].marks;
+            j = i-1;
+            
+            while(j >= 0 && temp > arr[j].marks){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1].marks = temp;
+        }
+    }
+    
+    int main()
+    {
+        Student students[4];
+        for(int i = 0; i < 4; i++){
+            std::cout<<"enter name of student\n";
+            std::cin>>students[i].name;
+            std::cout<<"enter marks of the student\n";
+            std::cin>>students[i].marks;
+        }
+        std::cout<<"Thank You!\n";
+        
+        iSort(students,4);
+        
+        std::cout<<"Names and marks of students with rankings are:\n";
+        for(int i = 0; i < 4; ++i){
+            std::cout<<"#"<<i+1<<" "<<students[i].name<<" "<<students[i].marks<<std::endl;
+        }
+        
+    }
