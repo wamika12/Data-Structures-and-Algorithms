@@ -1,12 +1,6 @@
-//
-//  main.cpp
-//  Data Structures
-//
-//  Created by Wamika Bansal on 5/21/17.
-//  Copyright © 2017 Wamika Bansal. All rights reserved.
-//
+
 /*
-    In this code, I make adjacency list using vectors
+    In this code, I make adjacency list for Graphs using vectors
  */
 #include <iostream>
 #include <vector>
